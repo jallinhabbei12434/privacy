@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obrigado por Baixar o Privacy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .thank-you-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 70vh;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .thank-you-box {
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 800px;
+            width: 90%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .thank-you-icon {
+            font-size: 5rem;
+            color: #f97316;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            opacity: 0;
+            animation: confetti 5s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes confetti {
+            0% {
+                transform: translateY(-50px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(500px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 30px;
+            text-align: left;
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .step-number {
+            background-color: #f97316;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .step-content h3 {
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        .step-content p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        .social-share {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .social-share a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f8f9fa;
+            color: #f97316;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-share a:hover {
+            transform: translateY(-3px);
+            background-color: #f97316;
+            color: white;
+        }
+        
+        .action-buttons {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        .btn-primary {
+            background-color: #f97316;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #ea580c;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: #f1f5f9;
+            color: #334155;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #e2e8f0;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .thank-you-box {
+                padding: 30px 20px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Elementos de fundo -->
+    <div class="background-elements">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+    </div>
+
+    <div class="main-container">
+        <!-- Cabeçalho -->
+        <header class="header">
+            <div class="logo-container">
+                <img src="images/privacy-logo.png" alt="Privacy Logo" class="logo">
+            </div>
+        </header>
+
+        <!-- Conteúdo principal -->
+        <main class="content">
+            <div class="thank-you-container">
+                <!-- Confetti animation -->
+                <div id="confetti-container"></div>
+                
+                <div class="thank-you-box">
+                    <div class="thank-you-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h1>Obrigado por baixar o Privacy!</h1>
+                    <p class="tagline">Seu download foi iniciado com sucesso</p>
+                    
+                    <div class="steps-container">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Instale o aplicativo</h3>
+                                <p>Após o download, abra o arquivo APK e siga as instruções para instalar o Privacy em seu dispositivo.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Crie sua conta</h3>
+                                <p>Abra o aplicativo e crie sua conta Privacy para começar a aproveitar todos os benefícios.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Explore os recursos</h3>
+                                <p>Descubra como o Privacy pode ajudar você a monetizar sua liberdade e proteger seus pagamentos online.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-share">
+                        <p>Compartilhe:</p>
+                        <a href="#" aria-label="Compartilhar no WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" aria-label="Compartilhar no Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Compartilhar no Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Compartilhar no Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <a href="#" id="backToTutorialBtn" class="btn btn-secondary">
+                            <i class="fas fa-video"></i> Voltar ao tutorial
+                        </a>
+                        <a href="index.html" class="btn btn-primary">
+                            <i class="fas fa-home"></i> Página inicial
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Rodapé -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/privacy-logo-small.png" alt="Privacy Logo" class="footer-logo-img">
+                </div>
+                <div class="footer-info">
+                    <p class="copyright">© 2025 Privacy</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-address">
+                    <p>ORANGE SEA CORP, 80 main street, PO BOX 3200, Road Town, Tortola VG1110, Ilhas Virgins Britânicas</p>
+                    <p>OMS520 TECHNOLOGY INTERNATIONAL, Aida Avenue, Estoril Garden, Bloco 1, Room 112, Estoril, Cascais, Lisboa.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Criar confetti
+            const confettiContainer = document.getElementById('confetti-container');
+            const colors = ['#f97316', '#fdba74', '#fb923c', '#ea580c', '#ffedd5'];
+            
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.animationDelay = Math.random() * 5 + 's';
+                confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+                confettiContainer.appendChild(confetti);
+            }
+            
+            // Obter a plataforma atual do localStorage
+            const currentPlatform = localStorage.getItem('currentPlatform');
+            const backToTutorialBtn = document.getElementById('backToTutorialBtn');
+            
+            // Configurar o botão para voltar à página de tutorial específica
+            if (currentPlatform === 'android') {
+                backToTutorialBtn.href = 'tutorial-android.html';
+            } else {
+                // Se não houver plataforma armazenada, voltar para a página inicial
+                backToTutorialBtn.href = 'index.html';
+            }
+            
+            // Iniciar o download automaticamente quando a página carregar
+            setTimeout(() => {
+                const downloadLink = document.createElement('a');
+                downloadLink.href = 'download/privacy-app.apk';
+                downloadLink.download = 'privacy-app.apk';
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+                document.body.removeChild(downloadLink);
+            }, 3000);
+            
+            // Se o download não começou automaticamente, oferecer um link direto
+            setTimeout(() => {
+                const downloadStatus = localStorage.getItem('downloadStarted');
+                if (!downloadStatus) {
+                    const downloadLink = document.createElement('div');
+                    downloadLink.className = 'download-link';
+                    downloadLink.innerHTML = `
+                        <p style="margin-top: 20px; color: #666;">Se o download não começou automaticamente, <a href="download/privacy-app.apk" download style="font-weight: bold;">clique aqui</a>.</p>
+                    `;
+                    document.querySelector('.thank-you-box').appendChild(downloadLink);
+                }
+            }, 3000);
+            
+            // Marcar que o download foi iniciado
+            localStorage.setItem('downloadStarted', 'true');
+            
+            // Limpar o status após 10 minutos
+            setTimeout(() => {
+                localStorage.removeItem('downloadStarted');
+            }, 600000);
+        });
+    </script>
+</body>
+</html>
